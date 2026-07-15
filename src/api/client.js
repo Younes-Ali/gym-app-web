@@ -1,4 +1,4 @@
-const BASE = "/api";
+const BASE = "https://pseudomonastical-interestedly-cristy.ngrok-free.dev/api";
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
