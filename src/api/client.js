@@ -2,7 +2,10 @@ const BASE = "https://pseudomonastical-interestedly-cristy.ngrok-free.dev/api";
 
 async function request(path, options = {}) {
   const res = await fetch(`${BASE}${path}`, {
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "application/json",
+    "ngrok-skip-browser-warning": "true",
+    ...(options.headers || {}),
+  },
     ...options,
   });
   if (!res.ok) {
